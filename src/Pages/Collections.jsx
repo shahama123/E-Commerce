@@ -4,7 +4,7 @@ import ProductItem from "../Components/ProductItem";
 import { ShopContext } from "../Context/ShopContext";
 
 const Collections = () => {
-  const { products,search } = useContext(ShopContext);
+  const { products, search } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(true);
   const [allCollections, setAllCollections] = useState([]);
   const [displayCount, setDisplayCount] = useState(16);
@@ -49,8 +49,8 @@ const Collections = () => {
 
     // Search Filtering
     if (search) {
-      filteredProducts = filteredProducts.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase()) // Filtering by product name
+      filteredProducts = filteredProducts.filter(
+        (item) => item.name.toLowerCase().includes(search.toLowerCase()) // Filtering by product name
       );
     }
 
@@ -69,45 +69,91 @@ const Collections = () => {
   };
 
   return (
-    <div className="flex border-t mx-32">
+    <div className="md:flex flex-row border-t md:mx-32 mx-10">
       <div className="min-w-60">
         <h1 className="text-xl mt-12 cursor-pointer">FILTERS</h1>
-        <div className={`border border-gray-300 py-2 pl-5 mt-6 ${showFilter ? "" : "hidden"}`}>
+        <div
+          className={`border border-gray-300 py-2 pl-5 mt-6 ${
+            showFilter ? "" : "hidden"
+          }`}
+        >
           <h1 className="mb-3">CATEGORIES</h1>
           <div className="flex flex-col text-sm space-y-2 text-gray-700">
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={"Men"} onChange={toggleCategory} />Men
+              <input
+                className="w-3"
+                type="checkbox"
+                value={"Men"}
+                onChange={toggleCategory}
+              />
+              Men
             </p>
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={"Women"} onChange={toggleCategory} />Women
+              <input
+                className="w-3"
+                type="checkbox"
+                value={"Women"}
+                onChange={toggleCategory}
+              />
+              Women
             </p>
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={"Kids"} onChange={toggleCategory} />Kids
+              <input
+                className="w-3"
+                type="checkbox"
+                value={"Kids"}
+                onChange={toggleCategory}
+              />
+              Kids
             </p>
           </div>
         </div>
-        <div className={`border border-gray-300 py-2 pl-5 mt-5 ${showFilter ? "" : "hidden"}`}>
+        {/* <div
+          className={`border border-gray-300 py-2 pl-5 mt-5 ${
+            showFilter ? "" : "hidden"
+          }`}
+        >
           <h1 className="mb-3">TYPE</h1>
           <div className="flex flex-col text-sm text-gray-700 space-y-2 ">
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={"Topwear"} onChange={toggleType} />Topwear
+              <input
+                className="w-3"
+                type="checkbox"
+                value={"Topwear"}
+                onChange={toggleType}
+              />
+              Topwear
             </p>
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={"Bottomwear"} onChange={toggleType} />Bottomwear
+              <input
+                className="w-3"
+                type="checkbox"
+                value={"Bottomwear"}
+                onChange={toggleType}
+              />
+              Bottomwear
             </p>
             <p className="flex gap-2">
-              <input className="w-3" type="checkbox" value={"Winterwear"} onChange={toggleType} />Winterwear
+              <input
+                className="w-3"
+                type="checkbox"
+                value={"Winterwear"}
+                onChange={toggleType}
+              />
+              Winterwear
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="ml-10">
-        <div className="flex justify-between items-center text-2xl ">
-          <Title className="text-sm" text1={"ALL"} text2={"COLLECTIONS"} />
-          <div>
+        <div className="flex flex-wrap justify-between items-center mb-5">
+          <div className=" md:text-2xl text-lg flex items-center justify-start ">
+            <Title className="text-sm" text1={"ALL"} text2={"COLLECTIONS"} />
+          </div>
+          <div className="flex items-center  mt-5">
             <select
-              className="border-2 border-gray-300 text-sm px-2 py-3"
+              className="border-2 border-gray-300 text-sm px-1 py-2"
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value)}
             >
@@ -117,10 +163,16 @@ const Collections = () => {
             </select>
           </div>
         </div>
-       
+
         <div className="grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 ">
           {allCollections.slice(0, displayCount).map((item) => (
-            <ProductItem key={item._id} id={item._id} image={item.image} name={item.name} price={item.price} />
+            <ProductItem
+              key={item._id}
+              id={item._id}
+              image={item.image}
+              name={item.name}
+              price={item.price}
+            />
           ))}
         </div>
 

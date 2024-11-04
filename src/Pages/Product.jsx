@@ -4,7 +4,6 @@ import { ShopContext } from "../Context/ShopContext";
 import { assets } from "../assets/assets";
 import RelatedProducts from "../Components/RelatedProducts";
 import { BsBoxSeam } from "react-icons/bs";
-import { CiDeliveryTruck } from "react-icons/ci";
 import { GoTrophy } from "react-icons/go";
 import { HiOutlineTruck } from "react-icons/hi";
 
