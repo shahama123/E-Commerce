@@ -50,7 +50,7 @@ const Header = () => {
         </div> */}
       </div>
       <div className="flex items-center gap-6">
-        <img src={assets.search_icon} className="w-5 cursor-pointer" alt="" />
+        <img src={assets.search_icon}  onClick={()=>setShowSearch(true)} className="w-5 cursor-pointer" alt="" />
         <div className="group relative">
           <img
             src={assets.profile_icon}
