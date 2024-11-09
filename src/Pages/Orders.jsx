@@ -6,8 +6,8 @@ const Orders = () => {
   const { products, currency } = useContext(ShopContext);
 
   return (
-    <div className="px-4 lg:mx-32">
-      <div className="flex justify-start text-2xl font-medium mb-6">
+    <div className="px-10 lg:mx-32">
+      <div className="flex justify-start md:text-2xl text-xl font-medium md:mb-6 mb-4">
         <Title text1="MY" text2="ORDERS" />
       </div>
       <div>
@@ -18,7 +18,7 @@ const Orders = () => {
           >
             <div className="flex items-start gap-4 text-sm">
               <img className="w-16 h-16 object-cover" src={item.image[0]} alt={item.name} />
-              <div className="text-sm font-normal space-y-2">
+              <div className="md:text-base text-sm font-normal space-y-2">
                 <h1 className="font-medium">{item.name}</h1>
                 <div className="flex flex-wrap gap-3 text-gray-700">
                   <p>

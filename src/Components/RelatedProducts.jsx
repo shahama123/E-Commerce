@@ -20,9 +20,9 @@ const RelatedProducts = ({category, subCategory}) => {
      },[products])
 
   return (
-    <div className='text-3xl text-center'>
+    <div className='md:text-3xl text-lg text-center'>
        <Title text1={"RELATED"} text2={"PRODUCTS"}></Title>
-       <div className='grid grid-cols-2 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 gap-4'>
+       <div className='grid grid-cols-2 lg:grid-cols-5 md:mt-10 pt-5 md:grid-cols-4 sm:grid-cols-3 gap-4'>
 
        {
            related.map((item, index)=>(

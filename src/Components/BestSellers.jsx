@@ -17,7 +17,7 @@ const BestSellers = () => {
 
 
   return (
-    <div className="text-3xl">
+    <div className="text-xl md:text-3xl">
       <Title
       
         text1={"BEST"}
@@ -26,7 +26,7 @@ const BestSellers = () => {
           "Our finest picks, designed to elevate your style effortlessly."
         }
       />
-      <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 mt-10 pb-20">
+      <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 mt-10 md:pb-20 mb-5">
         {bestSeller.map((item, index) => (
           <ProductItem
             key={index}

@@ -1,25 +1,49 @@
 import React, { useContext, useState } from "react";
 import { FaArrowLeft, FaCircle } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { ShopContext } from "../Context/ShopContext";
-import arrowImg from '../assets/arrow.png'
+import arrowImg from "../assets/arrow.png";
 
 const Header = () => {
-  const { setShowSearch, getCartCount, navigate } = useContext(ShopContext);
+  const {
+    setShowSearch,
+    getCartCount,
+    navigate,
+    token,
+    setToken,
+    setCartItem,
+  } = useContext(ShopContext);
   const [visible, setVisible] = useState(false);
   const [closeModal, setCloseModal] = useState(false);
+
+  const location = useLocation();
+  
+
+  // Check if the current path is "/login" to conditionally render the dropdown
+  const isLoginPage = location.pathname === "/login";
+
+  const logOut = () => {
+    console.log("Logging out...");
+    navigate("/login?");
+    localStorage.removeItem("token");
+    setToken("");
+    setCloseModal(false);
+    // setCartItem({})
+  };
   return (
-    <div className="flex items-center justify-between py-5 font-medium md:mx-32 mx-5">
+    <div className="flex items-center justify-between pt-5 font-medium md:mx-24 mx-5">
       <Link to={"/"}>
         <div className="flex gap-1">
           {" "}
-          <h1 className="md:text-3xl text-lg font-serif">TRENDORA</h1>
+          <h1 className="md:text-2xl prata-regular text-lg font-serif">
+            TRENDORA
+          </h1>
           <FaCircle className="md:w-3 w-2 md:mt-4 mt-2 text-rose-300" />
         </div>
       </Link>
-      <div className="  flex justify-normal items-center gap-5">
-        <ul className="hidden  sm:flex gap-5 text-sm text-gray-700 ">
+      <div className=" flex justify-normal items-center gap-5">
+        <ul className="hidden  sm:flex gap-5 text-base text-gray-700 ">
           <NavLink to={"/"} className="flex flex-col items-center gap-1 ">
             <p>Home</p>
             <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
@@ -42,66 +66,69 @@ const Header = () => {
             <p>Contact</p>
             <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
           </NavLink>
-        </ul>
-        {/* <div className="flex items-center">
+        <div className="flex items-center">
+          <NavLink to={'/'}>
           <button className="border border-gray-300 text-sm text-gray-700  px-4  py-1.5  rounded-3xl focus:outline-none">
             Admin Panel
           </button>
-        </div> */}
+          </NavLink>
+         
+        </div>
+        </ul>
       </div>
-      <div className="flex items-center gap-6">
-        <img src={assets.search_icon}  onClick={()=>setShowSearch(true)} className="w-5 cursor-pointer" alt="" />
+      <div className="flex items-center md:gap-6 gap-3">
+        <img
+          src={assets.search_icon}
+          onClick={() => setShowSearch(true)}
+          className="md:w-5 w-4 cursor-pointer"
+          alt=""
+        />
         <div className="group relative">
           <img
             src={assets.profile_icon}
-            className="w-5 cursor-pointer"
-            onClick={() => setCloseModal(true)}
+            className="md:w-5 w-4 cursor-pointer"
+            onClick={() => setCloseModal((prev) => !prev)}
             alt=""
           />
-          {closeModal && (
-            <div className="absolute dropdown-menu right-0 pt-4">
-              <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                <p
-                  onClick={() => {
-                    navigate("/");
-                    setCloseModal(false);
-                  }}
-                  className="cursor-pointer hover:text-black"
-                >
-                  My Profile
-                </p>
-                <p
-                  onClick={() => {
-                    navigate("/orders");
-                    setCloseModal(false);
-                  }}
-                  className="cursor-pointer hover:text-black"
-                >
-                  My Orders
-                </p>
-                <p
-                  onClick={() => {
-                    navigate("/login");
-                    setCloseModal(false);
-                  }}
-                  className="cursor-pointer hover:text-black"
-                >
-                  Logout
-                </p>
+        {closeModal && !isLoginPage && (
+        <div className="absolute dropdown-menu right-0 pt-4">
+          <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
+            <p
+              onClick={() => {
+                navigate("/");
+                setCloseModal(false);
+              }}
+              className="cursor-pointer hover:text-black"
+            >
+              My Profile
+            </p>
+
+            <p
+              onClick={() => {
+                navigate("/orders");
+                setCloseModal(false);
+              }}
+              className="cursor-pointer hover:text-black"
+            >
+              My Orders
+            </p>
+            <p onClick={logOut} className="cursor-pointer hover:text-black">
+              Logout
+            </p>
               </div>
             </div>
           )}
         </div>
         <Link to={"/cart"} className="relative">
-          <img src={assets.cart_icon} className="w-5 cursor-pointer" alt="" />
-          <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
+          <img src={assets.cart_icon} className="md:w-6 w-4 cursor-pointer" alt="" />
+          <p className="absolute md:right-[-5px] right-[-8px] md:bottom-[-1px]  bottom-[-5px] w-4  text-center leading-4 bg-black text-white aspect-square rounded-full text-[9px]">
             {getCartCount()}
           </p>
         </Link>
         <img
           onClick={() => setVisible(true)}
           src={assets.menu_icon}
-          className="w-5 cursor-pointer sm:hidden"
+          className="md:w-5 w-4 cursor-pointer sm:hidden"
           alt=""
         />
       </div>
@@ -117,8 +144,9 @@ const Header = () => {
             onClick={() => setVisible(false)}
             className="flex items-center gap-4 p-3 cursor-pointer"
           >
-            {/* <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="" /> */}
-            <h1><FaArrowLeft /></h1>
+            <h1>
+              <FaArrowLeft />
+            </h1>
             <p>Back</p>
           </div>
           <NavLink

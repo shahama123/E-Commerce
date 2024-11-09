@@ -54,7 +54,7 @@ const Product = () => {
 
           {/*-------product info------*/}
           <div className="flex-1 space-y-5">
-            <h1 className="text-2xl font-medium pt-2">{productData.name}</h1>
+            <h1 className="md:text-2xl text-xl font-medium pt-2">{productData.name}</h1>
             <div className="flex gap-1">
               <img src={assets.star_icon} alt="" className="w-3" />
               <img src={assets.star_icon} alt="" className="w-3" />
@@ -63,10 +63,10 @@ const Product = () => {
               <img src={assets.star_dull_icon} alt="" className="w-3" />
             </div>
             <div>
-              <p className="text-3xl font-medium">{currency}{productData.price}</p>
+              <p className="md:text-xl text-lg font-medium">{currency}{productData.price}</p>
             </div>
             <div>
-              <p className="text-gray-500 w-full">{productData.description}</p>
+              <p className="text-gray-500 md:text-lg text-sm w-full">{productData.description}</p>
             </div>
             <div className="flex flex-col gap-4 my-8">
               <p className="text-md">Select Size</p>
@@ -77,7 +77,7 @@ const Product = () => {
                       setSize(item);
                       console.log("Selected size:", item);
                     }}
-                    className={`border py-2 px-4 ${
+                    className={`border md:py-2 md:px-4 py-1 px-3 ${
                       item === size ? "border-amber-600 bg-amber-500" : "border-gray-300 bg-gray-200"
                     }`}
                     key={index}
@@ -87,7 +87,7 @@ const Product = () => {
                 ))}
               </div>
             </div>
-            <button onClick={() => addToCart(productData._id, size)} className="bg-black text-white px-8 py-3">
+            <button onClick={() => addToCart(productData._id, size)} className="bg-black text-white md:px-8 md:py-3 px-4 py-2 md:text-lg text-sm">
               ADD TO CART
             </button>
             <div className="border"></div>
@@ -111,7 +111,7 @@ const Product = () => {
       </div>
 
       {/*-------description and review section------*/}
-      <div className="mt-20 mx-4 md:mx-10 lg:mx-32">
+      <div className="md:mt-20 mt-10 mx-4 md:mx-10 lg:mx-32">
         <div className="flex flex-wrap">
           <button
             onClick={() => setActiveTab("description")}
@@ -132,7 +132,7 @@ const Product = () => {
         </div>
         <div className="border px-5 py-5 text-sm text-gray-500 space-y-3">
           {activeTab === "description" && (
-            <div className="px-5 py-5 text-sm text-gray-500 space-y-3">
+            <div className="px-5 py-5 md:text-sm text-xs text-gray-500 space-y-3">
               <p>
                 Step up your style game with this on-trend. Featuring the latest in
                 fashion-forward design, it’s the ideal statement piece to elevate
@@ -152,7 +152,7 @@ const Product = () => {
           )}
 
           {activeTab === "reviews" && (
-            <div className="px-5 py-5 text-sm text-gray-500 space-y-3">
+            <div className="px-5 py-5 md:text-sm text-xs text-gray-500 space-y-3">
               <p>Customer Reviews:</p>
               <p>- "Amazing product, very comfortable!"</p>
               <p>- "Good value for money. Great quality!"</p>
@@ -166,7 +166,7 @@ const Product = () => {
       </div>
 
       {/* -----------Related Products--------- */}
-      <div className="my-20 mx-4 md:mx-10 lg:mx-32">
+      <div className="md:my-20 md:py-10 mx-4 md:mx-10 lg:mx-32 ">
         <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
       </div>
     </>

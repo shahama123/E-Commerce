@@ -8,12 +8,12 @@ const CartTotal = () => {
   return (
     <div>
       <div className=" space-y-3 ">
-        <div className="w-96">
+        <div className="md:w-96 w-40">
 
-        <div className="text-2xl font-medium flex justify-start">
+        <div className="md:text-2xl text-lg font-medium flex justify-start">
           <Title text1={"CART"} text2={"TOTAL"} />
         </div>
-        <div className="text-sm space-y-2 mt-5 ">
+        <div className="text-sm space-y-2 mt-3 ">
           <div className="flex justify-between">
 
           <p className="">Subtotal</p>

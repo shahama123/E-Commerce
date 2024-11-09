@@ -4,11 +4,11 @@ import contactimg from "../assets/contact_img.png";
 
 const Contact = () => {
   return (
-    <div className="px-5 md:px-20 lg:px-32 py-10">
+    <div className="px-5 md:px-20 lg:px-32   pb-5">
       <div className="text-2xl">
         <Title text1={"CONTACT"} text2={"US"} />
       </div>
-      <div className="flex flex-col lg:flex-row gap-10 mt-10 lg:mt-20 items-center">
+      <div className="flex flex-col lg:flex-row gap-0 md:space-x-40 mt-6 lg:mt-10 items-center">
         
         {/* Image Section */}
         <img
@@ -40,10 +40,10 @@ const Contact = () => {
       </div>
       
       {/* Subscription Section */}
-      <div className="mt-16 flex flex-col items-center text-center">
+      <div className="mt-20 flex flex-col items-center text-center">
         <h1 className="md:text-2xl text-lg font-semibold text-gray-700">Subscribe now & get 20% off</h1>
         <p className="md:text-sm text-xs font-semibold text-gray-400 mt-4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum is simply dummy text of the printing and type setting industry.
         </p>
         <div className="mt-10 flex">
           <input

@@ -3,7 +3,7 @@ import hero from "../assets/hero_img.png";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 border border-gray-400 w-full h-auto md:h-[446px]">
+    <div className="grid grid-cols-1 md:grid-cols-2  border border-gray-400 w-full h-auto md:h-[446px]">
       <div className="flex items-center justify-center py-10 px-6 md:px-10">
         <div className="text-[#414141] text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-2">

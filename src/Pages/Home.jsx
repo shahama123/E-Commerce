@@ -10,13 +10,13 @@ import Exclusive from "../Components/Exclusive";
 const Home = () => {
   const [name, setName] = useState("");
   return (
-    <div className="lg:mx-32 md:mx-20 mx-5">
+    <div className="lg:mx-32 md:mx-20 mx-5  pt-10">
       <Hero />
       <LatestCollection />
       <Exclusive />
       <BestSellers />
 
-      <div className="flex flex-col md:flex-row justify-evenly items-center mt-10 mb-10 gap-8 px-5 md:px-10">
+      <div className="flex flex-col md:flex-row justify-evenly items-center mt-10  mb-10 gap-8 px-5 md:px-10">
         <div className="flex flex-col items-center text-center space-y-2 max-w-xs">
           <img className="mb-5 md:w-12 w-10" src={exchangeImage} alt="Exchange Policy Icon" />
           <h1 className="md:text-md text-sm  text-gray-700 font-semibold">

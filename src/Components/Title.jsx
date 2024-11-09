@@ -12,7 +12,7 @@ const Title = ({ text1, text2, description }) => {
         <p className="w-8 h-[2px] bg-gray-700 font-bold "></p>
       </div>
       <div>
-        <p className="text-center mt-5 text-lg text-gray-800">{description}</p>
+        <p className="text-center md:mt-5 mt-2 md:text-lg text-sm text-gray-800">{description}</p>
       </div>
     </div>
   );

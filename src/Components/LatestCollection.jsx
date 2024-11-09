@@ -13,7 +13,7 @@ const LatestCollection = () => {
 
   return (
     <div className="px-4 lg:px-8 text-3xl  ">
-      <div>
+      <div className="text-xl md:text-3xl">
         <Title
           text1="LATEST"
           text2="COLLECTIONS"

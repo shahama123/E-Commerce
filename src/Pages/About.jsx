@@ -7,11 +7,11 @@ import img3 from "../assets/customer-service.png";
 
 const About = () => {
   return (
-    <div className="px-5 md:px-20 lg:px-32 py-10">
+    <div className="px-5 md:px-20 lg:px-32 ">
       <div className="text-2xl">
         <Title text1={"ABOUT"} text2={"US"} />
       </div>
-      <div className="flex flex-col lg:flex-row items-center lg:items-start mt-10 lg:mt-16">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start mt-6 lg:mt-10">
         {/* Image Section */}
         <img
           className="w-full max-w-md lg:max-w-lg mb-8 lg:mb-0"
@@ -20,23 +20,23 @@ const About = () => {
         />
 
         {/* Text Section */}
-        <div className="lg:pl-10 space-y-5 text-gray-700 text-center   lg:text-left">
-          <p className="md:text-lg text-md">
+        <div className="lg:pl-10 space-y-3 text-gray-700 text-center lg:text-left">
+          <p className="md:text-base text-sm">
             Trendora was born out of a passion for innovation and a desire to
             revolutionize the way people shop online. Our journey began with a
             simple idea: to provide a platform where customers can easily
             discover, explore, and purchase a wide range of products from the
             comfort of their homes.
           </p>
-          <p className="md:text-lg text-md">
+          <p className="md:text-base text-sm">
             Since our inception, we've worked tirelessly to curate a diverse
             selection of high-quality products that cater to every taste and
             preference. From fashion and beauty to electronics and home
             essentials, we offer an extensive collection sourced from trusted
             brands and suppliers.
           </p>
-          <h1 className="font-semibold md:text-lg text-md">Our Mission</h1>
-          <p>
+          <h1 className="font-semibold md:text-lg text-base">Our Mission</h1>
+          <p className="md:text-base text-sm">
             Our mission at Trendora is to empower customers with choice,
             convenience, and confidence. We're dedicated to providing a seamless
             shopping experience that exceeds expectations, from browsing and
@@ -45,11 +45,11 @@ const About = () => {
         </div>
       </div>
       <div>
-        <div className="text-2xl pt-10 pb-10 flex">
+        <div className="md:text-2xl text-lg md:items-start items-center md:pt-10 pt-5 pb-10 flex">
           <Title text1={"WHY"} text2={"CHOOSE US"} />
         </div>
 
-        <div className="grid md:grid-cols-3 grid-cols-1 text-sm md:gap-5 gap-20 pt-5  ">
+        <div className="grid md:grid-cols-3 grid-cols-1 text-sm md:gap-5 gap-16 pt-5  ">
           <div className="relative text-gray-700 border rounded px-8 py-12">
             <img
               src={img1}
@@ -57,7 +57,7 @@ const About = () => {
               alt=""
             />
 
-            <div className="pt-5 text-center">
+            <div className="pt-5 text-center md:text-base text-sm">
               <b className="block">Quality Assurance:</b>
               <p className="pt-2">
                 We meticulously select and vet each product to ensure it meets
@@ -72,7 +72,7 @@ const About = () => {
               className="w-16 h-16 absolute -top-10 left-1/2 transform -translate-x-1/2"
               alt=""
             />
-            <div className="pt-5 text-center">
+            <div className="pt-5 text-center  md:text-base text-sm">
               <b className="block">Convenience:</b>
               <p className="pt-2">
                 With our user-friendly interface and hassle-free ordering
@@ -86,7 +86,7 @@ const About = () => {
               className="w-16 h-16 absolute -top-10 left-1/2 transform -translate-x-1/2"
               alt=""
             />
-            <div className="pt-5">
+            <div className="pt-5  md:text-base text-sm">
               <b className="block">Exceptional Customer Service:</b>
               <p className="pt-2">
                 Our team of dedicated professionals is here to assist you every

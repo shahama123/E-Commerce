@@ -13,7 +13,7 @@ const BestSellersAll = () => {
   }, [products]);
 
   return (
-    <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:mx-60">
+    <div className="px-8 sm:px-6 md:px-10  lg:px-20 xl:mx-60">
       <div className="text-xl md:text-2xl font-medium flex justify-start">
         <Title text1="BEST" text2="SELLERS" />
       </div>

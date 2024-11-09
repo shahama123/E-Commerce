@@ -146,7 +146,7 @@ const Collections = () => {
         </div> */}
       </div>
 
-      <div className="ml-10">
+      <div className="md:ml-10">
         <div className="flex flex-wrap justify-between items-center mb-5">
           <div className=" md:text-2xl text-lg flex items-center justify-start ">
             <Title className="text-sm" text1={"ALL"} text2={"COLLECTIONS"} />
@@ -177,10 +177,10 @@ const Collections = () => {
         </div>
 
         {displayCount < allCollections.length && (
-          <div className="flex justify-center items-center mt-5">
+          <div className="flex justify-center items-center md:py-10 py-6">
             <button
               onClick={loadMore}
-              className="mt-6 border px-5 py-3 bg-black hover:bg-transparent hover:text-black hover:border-black text-white rounded"
+              className="mt-6 border md:text-lg text-sm md:px-5 px-3 md:py-3 py-2 bg-black hover:bg-transparent hover:text-black hover:border-black text-white rounded"
             >
               Load More
             </button>
